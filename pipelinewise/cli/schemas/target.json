@@ -171,7 +171,11 @@
       "required": [
         "s3_bucket"
       ]
-    }
+    },
+    "db_conn_target_bigquery": {
+      "type": "object",
+      "properties": {}
+    },
   },
   "type": "object",
   "properties": {
@@ -193,7 +197,8 @@
         "target-snowflake",
         "target-redshift",
         "target-postgres",
-        "target-s3-csv"
+        "target-s3-csv",
+        "target-bigquery"
       ]
     },
     "db_conn": {
