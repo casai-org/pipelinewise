@@ -175,7 +175,7 @@
     "db_conn_target_bigquery": {
       "type": "object",
       "properties": {}
-    },
+    }
   },
   "type": "object",
   "properties": {
@@ -214,6 +214,9 @@
         },
         {
           "$ref": "#/definitions/db_conn_target_s3_csv"
+        },
+        {
+          "$ref": "#/definitions/db_conn_target_bigquery"
         }
       ]
     }
