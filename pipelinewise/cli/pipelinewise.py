@@ -101,13 +101,16 @@ class PipelineWise:
             dict_b = utils.load_json(tap_inheritable_config)
 
             # Copy everything from dictB into dictA - Not a real merge
-            dict_a.update(dict_b)
-
+            # Changed (jorge.juarez): It needs to priorization for the custom settings
+            # In example, on the old version the hard_delete config was overrided by the default settings
+            # I change the merge order
+            # dict_a.update(dict_b)
+            dict_b.update(dict_a)
             # Save the new dict as JSON into a temp file
             tempfile_path = utils.create_temp_file(dir=self.get_temp_dir(),
                                                    prefix='target_config_',
                                                    suffix='.json')[1]
-            utils.save_json(dict_a, tempfile_path)
+            utils.save_json(dict_b, tempfile_path)
 
             return tempfile_path
         except Exception as exc:
